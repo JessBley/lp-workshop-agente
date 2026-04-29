@@ -1,0 +1,117 @@
+/* Calculator Section */
+.calculator {
+    background-color: var(--bg-tertiary);
+    padding: var(--spacing-xl) 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.calculator-widget {
+    background-color: var(--bg-primary);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-lg);
+    max-width: 900px;
+    margin: var(--spacing-lg) auto;
+}
+
+.calculator-form {
+    margin-bottom: var(--spacing-lg);
+}
+
+.form-group {
+    margin-bottom: var(--spacing-md);
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 1rem;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--text-primary);
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    transition: var(--transition);
+}
+
+.form-control:focus {
+    border-color: var(--secondary-color);
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(233, 185, 73, 0.25);
+}
+
+.time-comparison {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: var(--spacing-lg);
+}
+
+.time-before, .time-after {
+    flex: 1;
+    background-color: var(--bg-secondary);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+    text-align: center;
+}
+
+.time-before h4, .time-after h4 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.time-before p, .time-after p {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.time-before {
+    border-left: 4px solid #e74c3c;
+}
+
+.time-after {
+    border-left: 4px solid #2ecc71;
+}
+
+.automation-example {
+    background-color: var(--bg-secondary);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.automation-example h4 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.automation-example p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin-bottom: 0;
+}
+
+.savings-chart {
+    height: 200px;
+    background-color: var(--bg-secondary);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+} 

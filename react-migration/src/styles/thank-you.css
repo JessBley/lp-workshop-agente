@@ -1,0 +1,714 @@
+/* ============================================================
+   thank-you.css  —  Página de Agradecimento / Confirmação
+   Edugital: Workshop Eliminando o Gargalo (Versão Light LP)
+   ============================================================ */
+
+/* ----------------------------------------------------------
+   VARIÁVEIS LOCAIS (herdam do projeto)
+   ---------------------------------------------------------- */
+:root {
+  --ty-purple:  #8F57FF;
+  --ty-purple-light: #A377FF;
+  --ty-gold:    #C8A961;
+  --ty-dark:    #240b3e;
+  --ty-light:   #F8F9FA;
+  --ty-success: #30D158;
+  --ty-success-glow: rgba(48, 209, 88, 0.15);
+  --ty-border:  rgba(36, 11, 62, 0.08);
+  --ty-text:    #4A4A5A;
+}
+
+/* ----------------------------------------------------------
+   WRAPPER GERAL
+   ---------------------------------------------------------- */
+.ty-page {
+  background-color: var(--ty-light);
+  color: var(--ty-text);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ============================================================
+   SEÇÃO 1 — Hero / Confirmação principal
+   ============================================================ */
+.ty-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 100px 0 60px;
+  background-color: var(--ty-light);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  text-align: center;
+}
+
+.ty-hero__glow {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 1200px;
+  height: 400px;
+  background: radial-gradient(circle at center, rgba(143, 87, 255, 0.15) 0%, transparent 70%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Overlay claro para garantir legibilidade */
+.ty-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.92) 0%, rgba(248, 249, 250, 0.98) 100%);
+  z-index: 0;
+}
+
+.ty-hero__container {
+  position: relative;
+  z-index: 1;
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+/* Ícone de check circular */
+.ty-success-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1.5rem;
+  color: var(--ty-success);
+  background: #ffffff;
+  border-radius: 50%;
+  padding: 2px;
+  box-shadow: 0 8px 24px var(--ty-success-glow);
+  animation: ty-pop-in 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both, ty-pulse-icon 3s ease-in-out infinite;
+}
+
+@keyframes ty-pulse-icon {
+    0%, 100% { transform: scale(1); box-shadow: 0 8px 24px var(--ty-success-glow); }
+    50% { transform: scale(1.05); box-shadow: 0 12px 32px rgba(48, 209, 88, 0.25); }
+}
+
+@keyframes ty-pop-in {
+  from { opacity: 0; transform: scale(0.5); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.ty-success-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.ty-hero__eyebrow {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #1a8a38;
+  background: rgba(48, 209, 88, 0.1);
+  border: 1px solid rgba(48, 209, 88, 0.2);
+  padding: 0.5rem 1.25rem;
+  border-radius: 9999px;
+  display: inline-block;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  animation: ty-fade-up 0.6s ease 0.2s both;
+}
+
+/* Badge de status */
+.ty-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(48, 209, 88, 0.1);
+  border: 1px solid rgba(48, 209, 88, 0.2);
+  color: #1a8a38;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.5rem 1.25rem;
+  border-radius: 9999px;
+  margin-bottom: 2rem;
+  animation: ty-fade-up 0.6s ease 0.2s both;
+}
+
+.ty-status-badge--purple {
+  background: #EBE4FF;
+  border: none;
+  color: #8F57FF;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 0.6rem 2rem;
+  border-radius: 9999px;
+  display: inline-block;
+  animation: ty-fade-up 0.6s ease 0.2s both;
+}
+
+.ty-status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--ty-success);
+  box-shadow: 0 0 8px var(--ty-success-glow);
+}
+
+.ty-hero__title {
+  font-size: clamp(2.5rem, 6vw, 3.8rem);
+  font-weight: 800;
+  color: var(--ty-dark);
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  animation: ty-fade-up 0.6s ease 0.35s both;
+}
+
+.ty-hero__title span {
+  background: linear-gradient(90deg, var(--ty-purple) 0%, var(--ty-gold) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.ty-hero__title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--ty-purple), var(--ty-gold));
+    margin: 1.5rem auto 0;
+    border-radius: 9999px;
+    opacity: 0.3;
+}
+
+.ty-hero__subtitle {
+  font-size: clamp(1.1rem, 2.2vw, 1.25rem);
+  color: var(--ty-text);
+  line-height: 1.6;
+  max-width: 620px;
+  margin: 0 auto 3rem;
+  animation: ty-fade-up 0.6s ease 0.5s both;
+}
+
+/* Card Informativo */
+.ty-info-card {
+  background: #FFFFFF;
+  border: 1px solid var(--ty-border);
+  border-radius: 12px;
+  padding: 1.75rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+  margin: 0 auto 3rem;
+  box-shadow: 0 4px 12px rgba(36, 11, 62, 0.08);
+  max-width: 600px;
+  animation: ty-fade-up 0.6s ease 0.55s both;
+}
+
+.ty-info-icon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(143, 87, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ty-purple);
+  font-size: 1.25rem;
+}
+
+.ty-info-text strong {
+  display: block;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--ty-dark);
+  margin-bottom: 0.35rem;
+}
+
+.ty-info-text p {
+  font-size: 0.95rem;
+  color: var(--ty-text);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Contingência / Botão área do aluno */
+.ty-contingency {
+  animation: ty-fade-up 0.6s ease 0.7s both;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.ty-contingency-divider {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin: 2.5rem 0;
+  color: var(--ty-text);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.4;
+}
+
+.ty-contingency-divider::before,
+.ty-contingency-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--ty-border);
+}
+
+.ty-btn-contingency {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+  padding: 1.35rem 2rem;
+  border-radius: 16px;
+  font-size: 1.1rem;
+  font-weight: 800;
+  text-decoration: none;
+  color: #FFFFFF;
+  background: #9061FF;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 25px rgba(144, 97, 255, 0.4);
+}
+
+.ty-btn-contingency:hover {
+  background: var(--ty-purple-light);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(143, 87, 255, 0.5);
+  color: #FFFFFF;
+}
+
+.ty-contingency-hint {
+  font-size: 0.85rem;
+  color: var(--ty-text);
+  margin-top: 1rem;
+  line-height: 1.5;
+  opacity: 0.7;
+}
+
+/* Linha de ícones de reassurance antigo fix */
+.ty-reassurance-row {
+  display: none; /* Removido em favor do novo layout do modelo */
+}
+
+.ty-reassurance-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.95rem;
+  color: var(--ty-dark);
+  font-weight: 600;
+}
+
+.ty-reassurance-icon {
+  font-size: 1.2rem;
+}
+
+@keyframes ty-fade-up {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================================================
+   SEÇÃO 2 — Nome oficial do workshop
+   ============================================================ */
+.ty-workshop {
+  padding: 80px 0;
+  background: var(--ty-light);
+}
+
+.ty-workshop__container {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.ty-workshop__label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--ty-purple);
+  background: rgba(143, 87, 255, 0.08);
+  padding: 0.4rem 1rem;
+  border-radius: 9999px;
+  display: inline-block;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+.ty-workshop__card {
+  background: #ffffff;
+  border: 1px solid var(--ty-border);
+  border-radius: 24px;
+  padding: 3rem 2rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(36, 11, 62, 0.05);
+  transition: all 0.3s ease;
+  animation: ty-fade-up 0.6s ease 0.4s both;
+}
+
+.ty-workshop__card--hero {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/* linha superior decorativa */
+.ty-workshop__card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, #8F57FF 0%, #C8A961 100%);
+}
+
+.ty-workshop__badge {
+  display: inline-block;
+  background: #FDF9F0;
+  color: #C8A961;
+  border: 1px solid rgba(200, 169, 97, 0.25);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  padding: 8px 20px;
+  border-radius: 50px;
+  margin-bottom: 2rem;
+}
+
+.ty-workshop__name {
+  font-size: clamp(1.8rem, 5vw, 2.8rem);
+  font-weight: 800;
+  color: #240b3e;
+  margin-bottom: 0;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.ty-workshop__name strong {
+  background: linear-gradient(90deg, #8F57FF 0%, #C8A961 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 800;
+}
+
+.ty-workshop__tagline {
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  color: var(--ty-text);
+  line-height: 1.5;
+  max-width: 650px;
+  margin: 0 auto;
+  opacity: 0.8;
+}
+
+.ty-workshop__tagline strong {
+  color: var(--ty-purple);
+  font-weight: 700;
+}
+
+/* ============================================================
+   SEÇÃO 3 — Data, horário e formato
+   ============================================================ */
+.ty-datetime {
+  padding: 80px 0 100px;
+  background: #ffffff;
+  border-top: 1px solid var(--ty-border);
+}
+
+.ty-datetime__container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.ty-datetime__eyebrow {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--ty-purple);
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.ty-datetime__heading {
+  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+  font-weight: 800;
+  color: var(--ty-dark);
+  margin-bottom: 3rem;
+  line-height: 1.2;
+}
+
+/* Card principal com as três informações */
+.ty-datetime__card {
+  background: var(--ty-light);
+  border: 1px solid var(--ty-border);
+  border-radius: 20px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  text-align: left;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  position: relative;
+  overflow: hidden;
+}
+
+.ty-datetime__item {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  padding: 1.5rem;
+}
+
+.ty-datetime__divider {
+  width: 1px;
+  background: var(--ty-border);
+  align-self: stretch;
+  flex-shrink: 0;
+}
+
+.ty-datetime__icon {
+  font-size: 2rem;
+  line-height: 1;
+  flex-shrink: 0;
+  margin-top: 2px;
+  background: #ffffff;
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.ty-datetime__info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ty-datetime__meta {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+  font-weight: 700;
+}
+
+.ty-datetime__value {
+  font-size: clamp(1.1rem, 2vw, 1.25rem);
+  font-weight: 800;
+  color: var(--ty-dark);
+  line-height: 1.2;
+}
+
+.ty-datetime__tz {
+  font-size: 0.85rem;
+  color: var(--ty-text);
+}
+
+/* Dica de UX */
+.ty-datetime__hint {
+  margin-top: 3rem;
+  font-size: 0.95rem;
+  color: var(--ty-text);
+  line-height: 1.6;
+  padding: 1.5rem 2rem;
+  background: rgba(143, 87, 255, 0.05);
+  border: 1px solid rgba(143, 87, 255, 0.12);
+  border-radius: 12px;
+  text-align: center;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ty-datetime__hint strong {
+  color: var(--ty-purple);
+}
+
+/* ============================================================
+   SEÇÃO 5 — Bloco de suporte ou contingência
+   ============================================================ */
+.ty-support {
+  padding: 100px 0;
+  background: var(--ty-light);
+  border-top: 1px solid var(--ty-border);
+}
+
+.ty-support__container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.ty-support__title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--ty-dark);
+  margin-bottom: 1rem;
+}
+
+.ty-support__description {
+  font-size: 1.05rem;
+  color: var(--ty-text);
+  line-height: 1.6;
+  margin-bottom: 3.5rem;
+  max-width: 580px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ty-support__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3.5rem;
+}
+
+.ty-support__card {
+  background: #ffffff;
+  border: 1px solid var(--ty-border);
+  border-radius: 16px;
+  padding: 2.5rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+}
+
+.ty-support__card:hover {
+  border-color: var(--ty-purple);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(36, 11, 62, 0.1);
+}
+
+.ty-support__icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: var(--ty-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ty-purple);
+  font-size: 1.35rem;
+  flex-shrink: 0;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.ty-support__card--whatsapp .ty-support__icon {
+  color: var(--ty-success);
+}
+
+.ty-support__info strong {
+  display: block;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--ty-dark);
+  margin-bottom: 0.3rem;
+}
+
+.ty-support__info span {
+  font-size: 0.9rem;
+  color: var(--ty-text);
+}
+
+.ty-support__footer {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  background: #ffffff;
+  padding: 1.5rem 2.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--ty-border);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  line-height: 1.5;
+}
+
+.ty-support__footer i {
+  color: var(--ty-purple);
+  font-size: 1.1rem;
+}
+
+/* ============================================================
+   RESPONSIVIDADE
+   ============================================================ */
+@media (max-width: 768px) {
+  .ty-hero { padding: 120px 0 60px; }
+  .ty-reassurance-row { padding: 1.25rem; }
+  .ty-workshop__card { padding: 2.5rem 1.5rem; }
+  .ty-datetime__card { flex-direction: column; padding: 1rem; gap: 0; }
+  .ty-datetime__divider { width: 100%; height: 1px; margin: 0; }
+  .ty-datetime__item { padding: 1.25rem 0.5rem; }
+}
+
+/* ============================================================
+   RODAPÉ SUTIL
+   ============================================================ */
+.ty-footer {
+  padding: 3rem 0;
+  background: #ffffff;
+  border-top: 1px solid var(--ty-border);
+  text-align: center;
+}
+
+.ty-footer__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.ty-footer__copyright {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.ty-footer__links {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.ty-footer__link {
+  font-size: 0.85rem;
+  color: var(--ty-purple);
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.3s ease;
+}
+
+.ty-footer__link:hover {
+  opacity: 0.7;
+}
+
+.ty-footer__divider {
+  color: var(--ty-border);
+  font-size: 0.8rem;
+}
+
+@media (max-width: 768px) {
+  .ty-footer { padding: 2.5rem 0; }
+  .ty-footer__links { gap: 0.75rem; }
+}

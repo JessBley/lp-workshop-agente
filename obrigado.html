@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edugital | Obrigado! Sua vaga está confirmada</title>
+    <meta name="description" content="Sua compra foi realizada com sucesso. Sua vaga no Workshop Eliminando o Gargalo está confirmada.">
+    <meta name="robots" content="noindex, nofollow">
+
+    <!-- Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* ============================
+           RESET & BASE
+        ============================ */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --primary-color: #8F57FF;
+            --primary-light: #A377FF;
+            --secondary-color: #C8A961;
+            --success-color: #30D158;
+            --success-glow: rgba(48, 209, 88, 0.15);
+            --bg-dark: #F8F9FA; /* Light gray background */
+            --bg-dark-2: #FFFFFF; /* White background */
+            --bg-card: #FFFFFF;
+            --text-white: #240b3e; /* Dark purple for main headings */
+            --text-light: #4A4A5A; /* Muted dark text */
+            --text-muted: #6C757D; /* Traditional muted gray */
+            --border-light: rgba(36, 11, 62, 0.08);
+            --font-family: 'Poppins', sans-serif;
+            --border-radius: 12px;
+            --border-radius-lg: 16px;
+            --transition: 0.3s ease;
+            --box-shadow: 0 4px 12px rgba(36, 11, 62, 0.08);
+            --box-shadow-lg: 0 12px 24px rgba(36, 11, 62, 0.12);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            min-height: 100vh;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ============================
+           HEADER MINIMAL
+        ============================ */
+        .header-minimal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            padding: 1.25rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .header-minimal__logo img {
+            height: 40px;
+            width: auto;
+        }
+
+        /* ============================
+           HERO CONFIRMAÇÃO
+        ============================ */
+        .hero-confirmacao {
+            position: relative;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 140px 1.5rem 5rem;
+            overflow: hidden;
+        }
+
+        /* Fundo sutil inspirado na LP com overlay claro */
+        .hero-confirmacao::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.92) 0%, rgba(248, 249, 250, 0.98) 100%);
+            z-index: 0;
+        }
+
+        .hero-confirmacao__inner {
+            position: relative;
+            z-index: 1;
+            max-width: 680px;
+            margin: 0 auto;
+            animation: fadeInUp 0.8s ease both;
+        }
+
+        /* ============================
+           ÍCONE DE SUCESSO
+        ============================ */
+        .success-icon-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2rem;
+            animation: fadeInScale 0.6s ease both;
+        }
+
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: var(--bg-dark);
+            border: 2px solid var(--success-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--success-color);
+            box-shadow: 0 8px 24px var(--success-glow);
+            animation: pulseIcon 3s ease-in-out infinite;
+        }
+
+        @keyframes pulseIcon {
+            0%, 100% { transform: scale(1); box-shadow: 0 8px 24px var(--success-glow); }
+            50% { transform: scale(1.05); box-shadow: 0 12px 32px rgba(48, 209, 88, 0.25); }
+        }
+
+        /* ============================
+           BADGE STATUS
+        ============================ */
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(48, 209, 88, 0.1);
+            border: 1px solid rgba(48, 209, 88, 0.2);
+            color: #1a8a38;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            padding: 0.5rem 1.25rem;
+            border-radius: 9999px;
+            margin-bottom: 1.5rem;
+        }
+
+        .status-badge__dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--success-color);
+            box-shadow: 0 0 8px var(--success-color);
+        }
+
+        /* ============================
+           TÍTULO PRINCIPAL
+        ============================ */
+        .hero-confirmacao__title {
+            font-size: clamp(2.25rem, 6vw, 3.5rem);
+            font-weight: 700;
+            line-height: 1.1;
+            color: var(--text-white);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-confirmacao__title span {
+            background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* ============================
+           SUBTÍTULO
+        ============================ */
+        .hero-confirmacao__subtitle {
+            font-size: clamp(1.1rem, 2.5vw, 1.25rem);
+            color: var(--text-light);
+            line-height: 1.6;
+            max-width: 580px;
+            margin: 0 auto 3rem;
+        }
+
+        /* ============================
+           CARD DE DESTAQUE
+        ============================ */
+        .info-card {
+            background: #FFFFFF;
+            border: 1px solid var(--border-light);
+            border-radius: var(--border-radius);
+            padding: 1.75rem 2rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1.25rem;
+            text-align: left;
+            margin-bottom: 2.5rem;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+
+        .info-card:hover {
+            box-shadow: var(--box-shadow-lg);
+            transform: translateY(-2px);
+        }
+
+        .info-card__icon {
+            flex-shrink: 0;
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: rgba(143, 87, 255, 0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+            font-size: 1.25rem;
+        }
+
+        .info-card__text strong {
+            display: block;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-white);
+            margin-bottom: 0.35rem;
+        }
+
+        .info-card__text p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        /* ============================
+           DIVIDER
+        ============================ */
+        .hero-confirmacao__divider {
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            border-radius: 9999px;
+            margin: 0 auto 2.5rem;
+            opacity: 0.3;
+        }
+
+        /* ============================
+           BOTÃO DE CONTINGÊNCIA
+        ============================ */
+        .contingency-block__divider {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 0.75rem 0 2rem;
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        .contingency-block__divider::before,
+        .contingency-block__divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border-light);
+        }
+
+        .btn-contingency {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            width: 100%;
+            padding: 1.15rem 2rem;
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            color: #FFFFFF;
+            background: var(--primary-color);
+            border: none;
+            cursor: pointer;
+            transition: all var(--transition);
+            box-shadow: 0 4px 14px rgba(143, 87, 255, 0.4);
+        }
+
+        .btn-contingency:hover {
+            background: var(--primary-light);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(143, 87, 255, 0.5);
+        }
+
+        .btn-contingency:active {
+            transform: translateY(-1px);
+        }
+
+        .btn-contingency__icon {
+            font-size: 1.1rem;
+        }
+
+        .contingency-hint {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 1rem;
+            line-height: 1.5;
+        }
+
+        /* ============================
+           SEÇÃO 2 — BLOCO WORKSHOP
+        ============================ */
+        .workshop-confirm {
+            padding: 6rem 1.5rem;
+            background-color: var(--bg-dark);
+            position: relative;
+        }
+
+        .workshop-confirm__inner {
+            position: relative;
+            z-index: 1;
+            max-width: 720px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .workshop-confirm__label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--primary-color);
+            background: rgba(143, 87, 255, 0.08);
+            padding: 0.5rem 1.25rem;
+            border-radius: 9999px;
+            margin-bottom: 2rem;
+        }
+
+        .workshop-confirm__card {
+            background: #FFFFFF;
+            border: 1px solid var(--border-light);
+            border-radius: var(--border-radius-lg);
+            padding: 3rem 2.5rem;
+            position: relative;
+            box-shadow: var(--box-shadow);
+        }
+
+        /* Accent border on top */
+        .workshop-confirm__card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
+        }
+
+        .workshop-confirm__prefix {
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--text-muted);
+            margin-bottom: 0.75rem;
+        }
+
+        .workshop-confirm__name {
+            font-size: clamp(1.75rem, 5vw, 2.5rem);
+            font-weight: 700;
+            line-height: 1.2;
+            color: var(--text-white);
+            margin: 0;
+        }
+
+        .workshop-confirm__name strong {
+            background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .workshop-confirm__reassure {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+            margin-top: 1.5rem;
+            font-size: 0.95rem;
+            color: #1a8a38;
+            font-weight: 500;
+        }
+
+        /* ============================
+           SEÇÃO 5 — SUPORTE
+        ============================ */
+        .support-block {
+            padding: 6rem 1.5rem;
+            background-color: #FFFFFF;
+            border-top: 1px solid var(--border-light);
+        }
+
+        .support-block__inner {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .support-block__title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-white);
+        }
+
+        .support-block__description {
+            font-size: 1.05rem;
+            color: var(--text-light);
+            margin-bottom: 3.5rem;
+            line-height: 1.6;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .contact-card-v2 {
+            background: var(--bg-dark);
+            border: 1px solid var(--border-light);
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+            text-decoration: none;
+            transition: var(--transition);
+            text-align: left;
+        }
+
+        .contact-card-v2:hover {
+            background: #FFFFFF;
+            border-color: var(--primary-color);
+            transform: translateY(-5px);
+            box-shadow: var(--box-shadow-lg);
+        }
+
+        .contact-card-v2__icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: #FFFFFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+            font-size: 1.25rem;
+            flex-shrink: 0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+        }
+
+        .contact-card-v2.whatsapp-support .contact-card-v2__icon {
+            color: var(--success-color);
+        }
+
+        .contact-card-v2__info strong {
+            display: block;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-white);
+            margin-bottom: 0.25rem;
+        }
+
+        .contact-card-v2__info span {
+            font-size: 0.875rem;
+            color: var(--text-light);
+        }
+
+        .support-footer-note {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            padding: 1.5rem;
+            background: var(--bg-dark);
+            border-radius: 12px;
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            max-width: 580px;
+            line-height: 1.5;
+        }
+
+        .support-footer-note i {
+            color: var(--primary-color);
+            font-size: 1.1rem;
+        }
+
+        /* ============================
+           RODAPÉ MINIMAL
+        ============================ */
+        .footer-minimal {
+            text-align: center;
+            padding: 3rem 1.5rem;
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            background-color: var(--bg-dark);
+            border-top: 1px solid var(--border-light);
+        }
+
+        .footer-minimal a {
+            color: var(--primary-color);
+            font-weight: 500;
+            text-decoration: none;
+        }
+
+        .footer-minimal a:hover {
+            text-decoration: underline;
+        }
+
+        /* ============================
+           ANIMAÇÕES
+        ============================ */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInScale {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        /* ============================
+           RESPONSIVO
+        ============================ */
+        @media (max-width: 480px) {
+            .header-minimal { padding: 1rem; }
+            .hero-confirmacao { padding: 120px 1rem 4rem; }
+            .info-card { padding: 1.25rem; flex-direction: column; text-align: center; align-items: center; }
+            .workshop-confirm__card { padding: 2rem 1.25rem; }
+            .contact-card-v2 { flex-direction: column; text-align: center; }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Header Minimal -->
+    <header class="header-minimal" id="header">
+        <a href="https://escola.edugital.com.br/workshopagente/" class="header-minimal__logo" aria-label="Voltar à página principal Edugital">
+            <img src="assets/logos/logo-edugitalklauto.webp" alt="Edugital" width="160" height="40">
+        </a>
+    </header>
+
+    <main>
+
+        <!-- =============================================
+             SEÇÃO 1 — FAIXA PRINCIPAL DE CONFIRMAÇÃO
+        ============================================== -->
+        <section class="hero-confirmacao" id="confirmacao" aria-labelledby="confirmacao-titulo">
+
+            <div class="hero-confirmacao__inner">
+
+
+                <!-- Subtítulo -->
+                <p class="hero-confirmacao__subtitle">
+                    Sua vaga no workshop está confirmada e seu acesso está sendo preparado.
+                </p>
+
+                <div class="hero-confirmacao__divider" aria-hidden="true"></div>
+
+                <!-- Card informativo: próximo passo -->
+                <div class="info-card" role="note" aria-label="Próximo passo">
+                    <div class="info-card__icon" aria-hidden="true">
+                        <i class="fas fa-envelope-open-text"></i>
+                    </div>
+                    <div class="info-card__text">
+                        <strong>Verifique seu e-mail</strong>
+                        <p>Em alguns minutos você receberá as instruções de acesso na sua caixa de entrada.</p>
+                    </div>
+                </div>
+
+                <!-- Botão de Contingência: Acessar área do aluno -->
+                <div class="contingency-block" id="bloco-area-aluno">
+
+                    <div class="contingency-block__divider" aria-hidden="true">ou, se preferir</div>
+
+                    <a
+                        href="https://lxp.edugital.com.br/"
+                        id="btn-acessar-area-aluno"
+                        class="btn-contingency"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Acessar a área do aluno na plataforma Edugital"
+                    >
+                        <span class="btn-contingency__icon" aria-hidden="true">
+                            <i class="fas fa-graduation-cap"></i>
+                        </span>
+                        <span class="btn-contingency__label">Acessar área do aluno</span>
+                        <span class="btn-contingency__icon" aria-hidden="true" style="margin-left: auto; color: rgba(255,255,255,0.35); font-size: 0.8rem;">
+                            <i class="fas fa-external-link-alt"></i>
+                        </span>
+                    </a>
+
+                    <p class="contingency-hint">
+                        Já tem acesso? Entre diretamente pela plataforma enquanto seu e-mail de boas-vindas chega.
+                    </p>
+
+                </div>
+                <!-- FIM Botão de Contingência -->
+
+            </div>
+
+        </section>
+        <!-- FIM SEÇÃO 1 -->
+
+
+        <!-- =============================================
+             SEÇÃO 5 — BLOCO DE SUPORTE
+        ============================================== -->
+        <section class="support-block" id="suporte" aria-labelledby="support-title">
+            <div class="support-block__inner">
+                
+                <h2 class="support-block__title" id="support-title">
+                    Precisa de suporte?
+                </h2>
+                <p class="support-block__description">
+                    Se você tiver qualquer dúvida sobre o acesso ou não receber o e-mail de confirmação, fale com a nossa equipe agora:
+                </p>
+
+                <div class="contact-grid">
+                    <!-- E-mail -->
+                    <a href="mailto:contato@edugital.com.br" class="contact-card-v2">
+                        <div class="contact-card-v2__icon" aria-hidden="true">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-card-v2__info">
+                            <strong>E-mail de Suporte</strong>
+                            <span>contato@edugital.com.br</span>
+                        </div>
+                    </a>
+
+                    <!-- WhatsApp -->
+                    <a href="https://wa.me/5548998422247" class="contact-card-v2 whatsapp-support" target="_blank" rel="noopener noreferrer">
+                        <div class="contact-card-v2__icon" aria-hidden="true">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div class="contact-card-v2__info">
+                            <strong>WhatsApp</strong>
+                            <span>Falar com especialista</span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="support-footer-note">
+                    <i class="fas fa-info-circle" aria-hidden="true"></i>
+                    “Se você não receber sua confirmação, entre em contato com nossa equipe.”
+                </div>
+
+            </div>
+        </section>
+        <!-- FIM SEÇÃO 5 -->
+
+    </main>
+
+    <!-- Rodapé Minimal -->
+    <footer class="footer-minimal">
+        <p>© 2026 Edugital · <a href="https://edugital.com.br/privacidade.html">Política de Privacidade</a></p>
+    </footer>
+
+</body>
+
+</html>

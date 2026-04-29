@@ -1,0 +1,269 @@
+/* Partners Section */
+.cases {
+    padding: var(--spacing-2xl) 0;
+    background: #e6ddff;
+    /* roxo claro */
+    position: relative;
+    overflow: hidden;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    /* Remove a linha branca entre as seções */
+}
+
+.cases::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% 50%, rgba(143, 87, 255, 0.12) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.cases .section__title {
+    font-family: var(--font-family);
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+    color: var(--text-color);
+    font-size: 1.25rem;
+    /* Reduzido significativamente */
+    font-weight: 600;
+    line-height: 1.4;
+    opacity: 0.8;
+    /* Leve transparência para ser menos dominante */
+}
+
+.cases .section__title::after {
+    display: none;
+}
+
+.cases .section__subtitle {
+    text-align: center;
+    color: var(--text-light);
+    font-size: 1.15rem;
+    max-width: 800px;
+    margin: 0 auto var(--spacing-2xl);
+    position: relative;
+    line-height: 1.6;
+}
+
+.cases .section__subtitle::after {
+    content: '';
+    display: block;
+    width: 180px;
+    height: 4px;
+    background: rgba(143, 87, 255, 0.45);
+    margin: calc(var(--spacing-sm) * 2) auto 0;
+    border-radius: 2px;
+}
+
+/* Grid de logos transparente */
+.partners-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 155px));
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: var(--spacing-xl);
+}
+
+.partner-logo--transparent {
+    background: none;
+    border: none;
+    padding: 0;
+    width: auto;
+    height: auto;
+    min-height: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.partner-logo--transparent img {
+    width: auto;
+    height: auto;
+    max-width: 92%;
+    max-height: 5.25rem;
+    display: block;
+    object-fit: contain;
+}
+
+/* Logos menores específicos no grid */
+.partners-grid .partner-logo--small img {
+    max-width: 68%;
+}
+
+/* Logos ainda menores (xsmall) */
+.partners-grid .partner-logo--xsmall img {
+    max-width: 58%;
+}
+
+/* Logo 7 ainda menor (xxsmall) */
+.partners-grid .partner-logo--xxsmall img {
+    max-width: 50%;
+}
+
+/* Logos maiores específicos no grid */
+.partners-grid .partner-logo--large img {
+    max-width: 102%;
+}
+
+/* Descomplica: um pouco maior que os demais large */
+.partners-grid .partner-logo--descomplica img {
+    max-width: 128%;
+    max-height: 6.5rem;
+}
+
+/* Partners Section Styles (legado) */
+.partners-section {
+    padding: 0;
+    background: #121212;
+    position: relative;
+    overflow: hidden;
+}
+
+.partners-container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.partners-track {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+/* estilos legados de card de logo removidos */
+
+/* Grid logos: sem fundo, sem borda, sem hover – só a imagem */
+.partner-logo.partner-logo--transparent,
+.partner-logo.partner-logo--transparent:hover {
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    opacity: 1 !important;
+    filter: none !important;
+    transform: none !important;
+    transition: none !important;
+}
+
+/* Sempre cores originais: especificidade alta para vencer components.css */
+.partner-logo.partner-logo--transparent img,
+.partner-logo.partner-logo--transparent:hover img {
+    filter: none !important;
+    -webkit-filter: none !important;
+    transform: none !important;
+    transition: none !important;
+}
+
+.cases .partners-grid .partner-logo img,
+.cases .partners-grid .partner-logo:hover img {
+    filter: none !important;
+    -webkit-filter: none !important;
+    transform: none !important;
+    transition: none !important;
+}
+
+.partners-grid .partner-logo,
+.partners-grid .partner-logo:hover,
+.partners-grid .partner-logo img,
+.partners-grid .partner-logo:hover img {
+    transition: none !important;
+}
+
+.partners-grid img {
+    filter: none !important;
+    -webkit-filter: none !important;
+}
+
+/* Fallback styles for when images fail to load */
+.partner-logo img:not([src]),
+.partner-logo img[src=""],
+.partner-logo img[src="#"] {
+    visibility: hidden;
+}
+
+.partner-logo img[src$=".svg"] {
+    width: 100%;
+    height: 100%;
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+    .partner-logo {
+        width: 320px;
+        height: 180px;
+    }
+
+    /* Não forçar largura/altura fixa dentro do grid responsivo */
+    .cases .partners-grid .partner-logo {
+        width: auto;
+        height: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .partner-logo {
+        width: 260px;
+        height: 150px;
+    }
+
+    /* No grid de clientes, deixar o tamanho livre para o CSS Grid controlar */
+    .cases .partners-grid .partner-logo {
+        width: auto;
+        height: auto;
+    }
+}
+
+/* Loading state */
+.partner-logo.loading {
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        background: rgba(45, 45, 45, 0.95);
+    }
+
+    50% {
+        background: rgba(55, 55, 55, 0.95);
+    }
+
+    100% {
+        background: rgba(45, 45, 45, 0.95);
+    }
+}
+
+/* Gradient overlays */
+.partners-container::before,
+.partners-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100px;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.partners-container::before {
+    left: 0;
+    background: linear-gradient(to right, var(--bg-dark), transparent);
+}
+
+.partners-container::after {
+    right: 0;
+    background: linear-gradient(to left, var(--bg-dark), transparent);
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    .cases .section__title {
+        font-size: var(--font-size-3xl);
+    }
+}

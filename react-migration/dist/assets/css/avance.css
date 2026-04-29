@@ -1,0 +1,231 @@
+/* Avance Section CSS */
+.avance-section {
+    padding: var(--spacing-xxl) 0;
+    background-color: var(--bg-dark);
+    /* Fundo claro/gelo */
+}
+
+.avance-header {
+    max-width: 1200px;
+    /* Aumentado para o título caber em uma única linha */
+    margin: 0 auto var(--spacing-2xl);
+    text-align: center;
+}
+
+.avance-header h2 {
+    font-family: var(--font-family);
+    font-size: clamp(2.2rem, 4vw, 2.8rem);
+    color: var(--text-color);
+    /* Roxo */
+    line-height: 1.2;
+}
+
+.avance-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-2xl);
+}
+
+.avance-card {
+    background-color: #FFFFFF;
+    border-radius: var(--border-radius-lg);
+    box-shadow: 0 4px 20px rgba(36, 11, 62, 0.08);
+    /* Sombra mais destacada que antes para combinar com a ref */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    /* Para garantir que a borda colorida respeite o border-radius no topo */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.avance-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(36, 11, 62, 0.15);
+}
+
+/* Bordas Coloridas Superiores (como no print) */
+.card-color-1 {
+    border-top: 6px solid var(--primary-color);
+}
+
+/* Roxo Edugital */
+.card-color-2 {
+    border-top: 6px solid #d94e1f;
+}
+
+/* Laranja Vibrante */
+.card-color-3 {
+    border-top: 6px solid #E67E22 !important;
+}
+
+/* Roxo Suave (Menos saturado) */
+.card-color-4 {
+    border-top: 6px solid #9B8CBF !important;
+}
+
+.card-intro {
+    padding: var(--spacing-lg) var(--spacing-lg) 0;
+    min-height: 120px;
+    /* Garante que o rótulo 'Inclui' comece no mesmo nível em todos os cards */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.card-intro h3 {
+    font-family: var(--font-family);
+    font-size: 1.45rem;
+    /* Aumentado de 1.25rem */
+    font-weight: 700;
+    /* Usando a mesma cor da borda no título dependendo do card, ou roxo geral. Vamos usar roxo geral para consistência, 
+       ou a cor específica. Pela imagem, o texto do título bate com a cor da borda (Verde, Laranja, Roxo). */
+}
+
+.card-color-1 .card-intro h3 {
+    color: var(--primary-color);
+}
+
+.card-color-2 .card-intro h3 {
+    color: #d94e1f;
+}
+
+.card-color-3 .card-intro h3 {
+    color: #E67E22 !important;
+}
+
+.card-color-4 .card-intro h3 {
+    color: #9B8CBF !important;
+}
+
+.card-intro p {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    /* Cinza escuro */
+    line-height: 1.5;
+    margin-top: var(--spacing-xs);
+    margin-bottom: 0;
+}
+
+.card-includes {
+    padding: var(--spacing-sm) var(--spacing-lg) var(--spacing-lg);
+    flex-grow: 1;
+    /* Para alinhar as listas ao fundo se os textos cima variarem de tamanho */
+    display: flex;
+    flex-direction: column;
+}
+
+.includes-label {
+    font-size: 0.95rem;
+    /* Aumentado de 0.85rem */
+    font-weight: 600;
+    color: var(--text-muted);
+    /* Cinza */
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: var(--spacing-sm);
+    opacity: 0;
+    /* Torna a palavra transparente conforme solicitado */
+}
+
+.includes-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.includes-list li {
+    background-color: #F4F6F8;
+    /* Fundo pílula cinza clarinho / gelo */
+    color: var(--text-color);
+    /* Texto escuro */
+    padding: 12px 15px;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    /* Aumentado de 0.9rem */
+    font-weight: 500;
+    line-height: 1.4;
+    transition: background-color 0.2s ease;
+}
+
+.includes-list li::first-letter {
+    text-transform: uppercase;
+    /* Força a primeira letra a ser maiúscula */
+}
+
+.includes-list li:hover {
+    background-color: #E9ECEF;
+}
+
+/* CTA Escuro Inferior (Do Print) */
+.avance-cta-block {
+    background-color: #6B47B5;
+    /* Roxo Médio */
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-xl) var(--spacing-lg);
+    text-align: center;
+    color: #FFFFFF;
+    /* Texto branco por padrão */
+    margin-top: var(--spacing-md);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+.avance-cta-block .btn-primary {
+    display: inline-block;
+    background-color: #d94e1f !important;
+    /* Laranja Edugital */
+    background-image: none;
+    color: #fff !important;
+    padding: 1rem 2.25rem;
+    font-size: 1.15rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    border-radius: 9999px;
+    text-decoration: none;
+    margin-bottom: var(--spacing-md);
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    border: none;
+}
+
+.avance-cta-block .btn-primary:hover {
+    background-color: #c44518 !important;
+    transform: translateY(-1px);
+    color: #fff !important;
+}
+
+.avance-cta-block p {
+    font-size: 0.95rem;
+    color: #FFFFFF;
+    /* Texto branco */
+    margin-bottom: 0;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Responsividade */
+@media (max-width: 1200px) {
+    .avance-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-lg);
+    }
+}
+
+@media (max-width: 768px) {
+    .avance-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .avance-cta-block {
+        padding: var(--spacing-lg);
+    }
+
+    .card-intro {
+        min-height: 70px;
+        /* Reduzido de 120px apenas no mobile */
+    }
+}

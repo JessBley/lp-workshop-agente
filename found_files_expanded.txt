@@ -1,0 +1,6 @@
+﻿C:\Users\Jéssica Bley\Documents\Edugital File Zilla\LP - MODELO\react-migration\node_modules\@tsparticles\shape-image\browser\GifUtils\Types\GIFProgressCallbackFunction.js
+C:\Users\Jéssica Bley\Documents\Edugital File Zilla\LP - MODELO\react-migration\node_modules\@tsparticles\shape-image\cjs\GifUtils\Types\GIFProgressCallbackFunction.js
+C:\Users\Jéssica Bley\Documents\Edugital File Zilla\LP - MODELO\react-migration\node_modules\@tsparticles\shape-image\esm\GifUtils\Types\GIFProgressCallbackFunction.js
+C:\Users\Jéssica Bley\Documents\Edugital File Zilla\LP - MODELO\react-migration\node_modules\@tsparticles\shape-image\types\GifUtils\Types\GIFProgressCallbackFunction.d.ts
+C:\Users\Jéssica Bley\Documents\Edugital File Zilla\LP - MODELO\react-migration\node_modules\@tsparticles\shape-image\umd\GifUtils\Types\GIFProgressCallbackFunction.js
+C:\Users\Jéssica Bley\Documents\Edugital File Zilla\LP - MODELO\react-migration\node_modules\caniuse-lite\data\features\progress.js

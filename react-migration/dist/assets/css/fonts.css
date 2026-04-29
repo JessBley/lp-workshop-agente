@@ -1,0 +1,23 @@
+/* Fonte Mokoto - títulos
+   Arquivos reais do projeto em assets/fonts/{otf,ttf}/
+*/
+@font-face {
+    font-family: 'Mokoto';
+    src:
+        url('../fonts/otf/mokoto-mokoto-regular-400.otf') format('opentype'),
+        url('../fonts/ttf/mokoto-mokoto-regular-400.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Mapear bold (700) para o mesmo arquivo (não há arquivo 700) */
+@font-face {
+    font-family: 'Mokoto';
+    src:
+        url('../fonts/otf/mokoto-mokoto-regular-400.otf') format('opentype'),
+        url('../fonts/ttf/mokoto-mokoto-regular-400.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}

@@ -1,0 +1,142 @@
+/* Base.css - Estilos globais, reset, fontes e variáveis CSS */
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Variáveis CSS - Cores Otimizadas */
+:root {
+    /* Cores principais - Paleta otimizada */
+    --primary-color: #5D3E90;
+    /* Roxo principal */
+    --primary-color-light: #7650B8;
+    --secondary-color: #9D6BFF;
+    --secondary-color-dark: #8043FF;
+    --bg-dark: #F8F9FA;
+    /* AGORA CLARO: Cinza/Gelo - Fundo principal */
+    --bg-card: #FFFFFF;
+    /* AGORA BRANCO: Background de seções e cards */
+    --highlight-color: #C8A961;
+    /* Dourado oficial */
+
+    /* Cores de texto - Melhor legibilidade no fundo claro */
+    --text-color: #240b3e;
+    /* Roxo escuro Edugital para texto corrido */
+    --text-light: #4A4A5A;
+    /* Cinza chumbo/roxo acinzentado */
+    --text-white: #240b3e;
+    /* Títulos mantêm esse nome mas usamos escuro */
+    --text-on-dark: #FFFFFF;
+
+    /* Cores de acento para cards e botões */
+    --accent-purple: #8F57FF;
+    --accent-purple-light: #C9AEFF;
+    --accent-gold: #C8A961;
+
+    /* Gradientes otimizados */
+    --gradient-primary: linear-gradient(135deg, #5D3E90 0%, #9D6BFF 100%);
+    --gradient-card: linear-gradient(180deg, #FFFFFF 0%, #F5F5FA 100%);
+    --gradient-highlight: linear-gradient(135deg, #9D6BFF 0%, #C8A961 100%);
+
+    /* Cores de estado */
+    --success: #30D158;
+    --error: #FF453A;
+    --warning: #FFD60A;
+    --info: #32ADE6;
+
+    /* Espaçamentos */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    --spacing-xxl: 3rem;
+
+    /* Tipografia */
+    --font-family: 'Poppins', sans-serif;
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.25rem;
+    --font-size-xl: 1.5rem;
+    --font-size-2xl: 2rem;
+    --font-size-3xl: 2.5rem;
+    --font-size-4xl: 3rem;
+
+    /* Peso da fonte */
+    --font-light: 300;
+    --font-regular: 400;
+    --font-medium: 500;
+    --font-semibold: 600;
+    --font-bold: 700;
+
+    /* Bordas e sombras */
+    --border-radius: 12px;
+    --border-radius-sm: 6px;
+    --border-radius-lg: 20px;
+    --border-radius-full: 9999px;
+    --box-shadow: 0 4px 16px rgba(36, 11, 62, 0.08);
+    --box-shadow-lg: 0 10px 30px rgba(36, 11, 62, 0.12);
+
+    /* Layout */
+    --header-height: 80px;
+    --container-max-width: 1200px;
+}
+
+/* Configurações globais */
+html,
+body {
+    font-family: var(--font-family);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-regular);
+    color: var(--text-color);
+    line-height: 1.6;
+    background-color: var(--bg-dark);
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+.container {
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
+}
+
+/* Tipografia básica */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: var(--font-bold);
+    color: var(--text-white);
+    margin-bottom: var(--spacing-md);
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: var(--accent-purple);
+}
+
+/* Classes Auxiliares */
+.text-gradient {
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.text-center { text-align: center; }
+.mb-4 { margin-bottom: var(--spacing-lg); }
+.mt-4 { margin-top: var(--spacing-lg); }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    html { font-size: 14px; }
+    .container { padding: 0 var(--spacing-md); }
+}

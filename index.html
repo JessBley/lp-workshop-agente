@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edugital | Consultoria em Inovação Digital e Educação Corporativa</title>
+    <meta name="description"
+        content="Transforme sua empresa com soluções inovadoras em educação corporativa, tecnologia e consultoria de negócios. Descubra como a Edugital pode impulsionar seus resultados.">
+
+    <!-- Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- GSAP (para animações) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+
+    <!-- CSS Próprio -->
+    <link rel="stylesheet" href="assets/css/fonts.css">
+    <link rel="stylesheet" href="assets/css/variables.css">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/utilities.css">
+    <link rel="stylesheet" href="assets/css/layout.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/header.css">
+    <link rel="stylesheet" href="assets/css/hero.css">
+    <link rel="stylesheet" href="assets/css/features.css">
+    <link rel="stylesheet" href="assets/css/testimonials.css">
+    <link rel="stylesheet" href="assets/css/carousel.css">
+    <link rel="stylesheet" href="assets/css/pricing.css">
+    <link rel="stylesheet" href="assets/css/calculator.css">
+    <link rel="stylesheet" href="assets/css/mentors.css">
+    <link rel="stylesheet" href="assets/css/faq.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="assets/css/pages.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/partners.css">
+    <link rel="stylesheet" href="assets/css/mission.css">
+    <link rel="stylesheet" href="assets/css/how-it-works.css">
+    <link rel="stylesheet" href="assets/css/avance.css">
+
+    <!-- Scripts -->
+    <script src="assets/js/main.js" defer></script>
+    <!-- Fundo da hero: caminho relativo ao index para a imagem carregar ao abrir a página -->
+    <style>
+        .hero {
+            background-image: url('assets/img/bg-hero.webp');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header" id="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="index.html" class="nav__logo">
+                    <img src="assets/logos/logo-edugitalklauto.webp" alt="Edugital" width="200" height="50">
+                </a>
+
+                <div class="nav__menu">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="produtos-servicos.html" class="nav__link">Produtos e Serviços</a></li>
+                        <li class="nav__item"><a href="literacia-digital.html" class="nav__link">Literacia Digital para empresas</a></li>
+                        <li class="nav__item"><a href="equipe.html" class="nav__link">Equipe</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav__cta">
+                    <a href="#contato" class="btn" data-contact-trigger aria-controls="contactModal">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>Fale Conosco</span>
+                    </a>
+                </div>
+
+                <button class="nav__toggle" aria-label="Menu" aria-expanded="false">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <p class="hero__subtitle">
+                A <strong>Edugital</strong> resolve os principais <strong>gargalos do trabalho digital</strong> nas
+                empresas: <strong>decisões ruins</strong>, <strong>retrabalho</strong> e <strong>tecnologia mal
+                    utilizada</strong>.
+            </p>
+            <div class="hero__content-list">
+                <h2 class="hero__subtitle">Finalmente sua organização terá:</h2>
+                <ul class="hero__list">
+                    <li>Metodologias personalizadas alinhadas ao seu contexto</li>
+                    <li>Treinamentos e mentorias aplicadas a problemas da sua realidade</li>
+                    <li>Estruturação de processos, playbooks e governança do conhecimento</li>
+
+                </ul>
+                <a href="#contato" class="hero__btn-proposal" data-contact-trigger
+                    aria-controls="contactModal">Solicitar proposta</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="mission-section section" id="equipe">
+        <div class="container">
+            <div class="mission-grid">
+                <div class="mission-text">
+                    <h2>Nossa missão: desenvolver capacidades organizacionais para a era digital</h2>
+                    <p>A Edugital atua no gap entre tecnologia e capacidade&nbsp;organizacional.</p>
+                </div>
+
+                <div class="mission-stats">
+                    <!-- Card 1 -->
+                    <div class="stat-card bg-lilac">
+                        <div class="stat-icon"><i class="fas fa-user"></i></div>
+                        <h3>+5.000</h3>
+                        <p>profissionais impactados</p>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="stat-card bg-blue">
+                        <div class="stat-icon"><i class="fas fa-star"></i></div>
+                        <h3>+30</h3>
+                        <p>organizações atendidas</p>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="stat-card bg-yellow">
+                        <div class="stat-icon"><i class="fas fa-chart-line"></i></div>
+                        <h3>10 anos</h3>
+                        <p>de experiência em educação, tecnologia e organizações</p>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="stat-card bg-peach">
+                        <div class="stat-icon"><i class="fas fa-project-diagram"></i></div>
+                        <h3>+90</h3>
+                        <p>projetos e programas executados</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Como Funciona Section -->
+    <section class="how-it-works-section section" id="literacia">
+        <div class="container">
+            <div class="how-header">
+                <h2>Como a Edugital desenvolve capacidades nas organizações</h2>
+                <p class="subtitle">Nossas soluções combinam diagnóstico organizacional, aprendizagem aplicada e
+                    implementação de novos métodos de trabalho.</p>
+            </div>
+
+            <div class="how-grid">
+                <!-- Card 1 -->
+                <div class="how-card">
+                    <div class="how-icon"><i class="fas fa-search"></i></div>
+                    <h3>Diagnóstico</h3>
+                    <p>Identificamos onde decisões falham e processos geram retrabalho para redesenhar esses pontos
+                        aumentando a eficiência operacional.</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="how-card">
+                    <div class="how-icon"><i class="fas fa-users-cog"></i></div>
+                    <h3>Mentoria estratégica</h3>
+                    <p>Ajudamos profissionais a tomar decisões mais consistentes, organizar melhor o trabalho e usar
+                        tecnologia de forma produtiva no dia a dia.</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="how-card">
+                    <div class="how-icon"><i class="fas fa-sitemap"></i></div>
+                    <h3>Estruturação de LMS ou LXP</h3>
+                    <p>Transformamos conhecimento disperso em métodos, playbooks e processos que permitem que a
+                        organização aprenda e evolua continuamente.</p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="how-card">
+                    <div class="how-icon"><i class="fas fa-laptop-code"></i></div>
+                    <h3>Programas de desenvolvimento</h3>
+                    <p>Desenvolvemos competências críticas: pensamento analítico, produtividade digital e uso de
+                        IA; aplicadas diretamente aos desafios da organização.</p>
+                </div>
+            </div>
+
+            <!-- Botões -->
+            <div class="how-actions">
+                <a href="#contato" class="btn-secondary" data-contact-trigger aria-controls="contactModal">Falar com
+                    especialista</a>
+                <p class="how-actions-caption">Transforme as capacidades da sua organização na era digital.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Cases Section -->
+    <section class="cases">
+        <div class="container">
+            <h2 class="section__title">Empresas líderes já alcançaram resultados com a Edugital</h2>
+            <div class="partners-grid" id="clientes">
+                <div class="partner-logo partner-logo--transparent partner-logo--large partner-logo--descomplica"><img
+                        src="assets/logos/Descomplica.webp" alt="Descomplica" loading="lazy" width="160" height="90">
+                </div>
+                <div class="partner-logo partner-logo--transparent"><img src="assets/logos/EBAC.webp" alt="EBAC"
+                        loading="lazy" width="160" height="90"></div>
+                <div class="partner-logo partner-logo--transparent"><img src="assets/logos/fam-960x640.webp" alt="FAM"
+                        loading="lazy" width="160" height="90"></div>
+                <div class="partner-logo partner-logo--transparent"><img src="assets/logos/gf.webp" alt="GF"
+                        loading="lazy" width="160" height="90"></div>
+                <div class="partner-logo partner-logo--transparent partner-logo--xxsmall"><img
+                        src="assets/logos/IATEC-vertical-colorida.webp" alt="IATEC" loading="lazy" width="160"
+                        height="90"></div>
+                <div class="partner-logo partner-logo--transparent partner-logo--xsmall"><img src="assets/logos/ibm.webp"
+                        alt="IBM" loading="lazy" width="160" height="90"></div>
+                <div class="partner-logo partner-logo--transparent partner-logo--small"><img
+                        src="assets/logos/iIBmec.webp" alt="IBMec" loading="lazy" width="160" height="90"></div>
+                <div class="partner-logo partner-logo--transparent"><img src="assets/logos/images%20(1).webp"
+                        alt="Parceiro" loading="lazy" width="160" height="90"></div>
+                <div class="partner-logo partner-logo--transparent partner-logo--small"><img
+                        src="assets/logos/images%20(2).webp" alt="Parceiro" loading="lazy" width="160" height="90"></div>
+                <div class="partner-logo partner-logo--transparent"><img src="assets/logos/institutosabersocial.webp"
+                        alt="Instituto Saber Social" loading="lazy" width="160" height="90"></div>
+                <div class="partner-logo partner-logo--transparent partner-logo--small"><img
+                        src="assets/logos/John%20Deere.webp" alt="John Deere" loading="lazy" width="160" height="90">
+                </div>
+                <div class="partner-logo partner-logo--transparent"><img src="assets/logos/Logo-IGCE-256x92.webp"
+                        alt="IGCE" loading="lazy" width="160" height="90"></div>
+                <div class="partner-logo partner-logo--transparent"><img
+                        src="assets/logos/logo_grupo_impacta_azul-01.webp" alt="Grupo Impacta" loading="lazy" width="160"
+                        height="90"></div>
+                <div class="partner-logo partner-logo--transparent"><img src="assets/logos/usp.webp" alt="USP"
+                        loading="lazy" width="160" height="90"></div>
+                <div class="partner-logo partner-logo--transparent partner-logo--large"><img
+                        src="assets/logos/vixpar.webp" alt="Vixpar" loading="lazy" width="160" height="90"></div>
+                <div class="partner-logo partner-logo--transparent"><img src="assets/logos/whirlpool.webp"
+                        alt="Whirlpool" loading="lazy" width="160" height="90"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Avance com a Edugital Section -->
+    <section class="avance-section section" id="servicos">
+        <div class="container">
+            <div class="avance-header">
+                <h2>Avance com as soluções da Edugital:<br>dos processos aos resultados</h2>
+            </div>
+
+            <div class="avance-grid">
+                <!-- Card 1 -->
+                <div class="avance-card card-color-1">
+                    <div class="card-intro">
+                        <h3>Consultoria em capacidades organizacionais</h3>
+                    </div>
+                    <div class="card-includes">
+                        <p class="includes-label">Inclui</p>
+                        <ul class="includes-list">
+                            <li>diagnóstico organizacional</li>
+                            <li>análise de processos</li>
+                            <li>planejamento estratégico</li>
+                            <li>reestruturação de métodos de trabalho</li>
+                            <li>evolução do desempenho organizacional</li>
+                            <li>métricas de desempenho</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="avance-card card-color-2">
+                    <div class="card-intro">
+                        <h3>Mentoria estratégica</h3>
+                    </div>
+                    <div class="card-includes">
+                        <p class="includes-label">Inclui</p>
+                        <ul class="includes-list">
+                            <li>Acompanhamento aplicado para líderes e profissionais</li>
+                            <li>melhora de decisões, organização do trabalho e uso de tecnologia</li>
+                            <li>mentoria individual</li>
+                            <li>mentoria coletiva</li>
+                            <li>resolução de problemas reais</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="avance-card card-color-3">
+                    <div class="card-intro">
+                        <h3>Arquitetura de aprendizagem organizacional</h3>
+                    </div>
+                    <div class="card-includes">
+                        <p class="includes-label">Inclui</p>
+                        <ul class="includes-list">
+                            <li>trilhas de aprendizagem</li>
+                            <li>programas internos</li>
+                            <li>playbooks organizacionais</li>
+                            <li>LXP</li>
+                            <li>LMS</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="avance-card card-color-4">
+                    <div class="card-intro">
+                        <h3>Programas de desenvolvimento de capacidades</h3>
+                    </div>
+                    <div class="card-includes">
+                        <p class="includes-label">Inclui</p>
+                        <ul class="includes-list">
+                            <li>pensamento analítico</li>
+                            <li>produtividade digital</li>
+                            <li>uso estratégico de IA</li>
+                            <li>comunicação e influência</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bloco CTA -->
+            <div class="avance-cta-block">
+                <a href="#contato" class="btn-primary" data-contact-trigger aria-controls="contactModal">Falar com especialista</a>
+                <p>Nossa equipe de especialistas ajudará você a escolher a melhor solução para sua empresa</p>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__grid">
+                <div class="footer__column">
+                    <a href="index.html" class="footer__logo">
+                        <img src="assets/logos/edugital-branco.webp" alt="Edugital" width="96" height="24" loading="lazy">
+                    </a>
+                    <p class="footer__description">
+                        Transformando negócios através de soluções inovadoras em educação corporativa e tecnologia.
+                    </p>
+                    <div class="footer__social">
+                        <a href="https://linkedin.com/company/edugitalbr" class="social__link" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://instagram.com/edugital.br" class="social__link" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://youtube.com/@edugital" class="social__link" aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer__column">
+                    <h3 class="footer__title">Links Rápidos</h3>
+                    <ul class="footer__links">
+                        <li class="footer__link"><a href="produtos-servicos.html">Produtos e Serviços</a></li>
+                        <li class="footer__link"><a href="literacia-digital.html">Literacia Digital para empresas</a></li>
+                        <li class="footer__link"><a href="equipe.html">Equipe</a></li>
+                        <li class="footer__link"><a href="#contato" data-contact-trigger
+                                aria-controls="contactModal">Contato</a></li>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer__column">
+                    <h3 class="footer__title">Nossa Expertise</h3>
+                    <ul class="footer__links">
+                        <li class="footer__link"><a href="produtos-servicos.html">Consultoria Digital</a></li>
+                        <li class="footer__link"><a href="produtos-servicos.html">Educação Corporativa</a></li>
+                        <li class="footer__link"><a href="produtos-servicos.html">Automação e IA</a></li>
+                        <li class="footer__link"><a href="produtos-servicos.html">Desenvolvimento</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer__column">
+                    <h3 class="footer__title">Contato</h3>
+                    <div class="footer__contact">
+                        <div class="contact__item">
+                            <i class="fas fa-phone"></i>
+                            <a href="https://wa.me/5548998422247" target="_blank" rel="noopener">
+                                +55 48 99842-2247
+                            </a>
+                        </div>
+                        <div class="contact__item">
+                            <i class="fas fa-envelope"></i>
+                            <span>contato@edugital.com.br</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <div class="footer__copyright">
+                    © 2026 Edugital. Todos os direitos reservados.
+                </div>
+                <div class="footer__legal">
+                    <a href="https://edugital.com.br/privacidade.html" class="footer__legal-link">Política de Privacidade</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Painel de Cookies -->
+    <div class="cookie-banner" id="cookieBanner" aria-hidden="true">
+        <div class="cookie-banner__content" role="dialog" aria-labelledby="cookieTitle">
+            <div class="cookie-banner__text">
+                <h3 class="cookie-banner__title" id="cookieTitle">Cookies e privacidade</h3>
+                <p class="cookie-banner__description">
+                    Usamos cookies essenciais para o funcionamento do site e cookies opcionais para melhorar sua
+                    experiência.
+                </p>
+                <a href="https://edugital.com.br/privacidade.html" class="cookie-banner__link">Ler política de privacidade</a>
+            </div>
+            <div class="cookie-banner__preferences">
+                <label class="cookie-banner__option">
+                    <input type="checkbox" checked disabled>
+                    <span>Necessários</span>
+                </label>
+                <label class="cookie-banner__option">
+                    <input type="checkbox" name="cookie_analytics">
+                    <span>Analíticos</span>
+                </label>
+                <label class="cookie-banner__option">
+                    <input type="checkbox" name="cookie_marketing">
+                    <span>Marketing</span>
+                </label>
+            </div>
+            <div class="cookie-banner__actions">
+                <button class="btn btn--secondary" type="button" data-cookie-reject>Rejeitar</button>
+                <button class="btn btn--secondary" type="button" data-cookie-save>Salvar preferências</button>
+                <button class="btn btn--primary" type="button" data-cookie-accept>Aceitar todos</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Contato -->
+    <div class="contact-modal" id="contactModal" aria-hidden="true">
+        <div class="contact-modal__overlay" data-contact-close></div>
+        <div class="contact-modal__content" role="dialog" aria-modal="true" aria-labelledby="contactModalTitle">
+            <button class="contact-modal__close" type="button" aria-label="Fechar" data-contact-close>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <div class="contact-modal__header">
+                <h2 class="contact-modal__title" id="contactModalTitle">Fale com a Edugital</h2>
+            </div>
+            <div class="contact-modal__iframe-container">
+                <iframe class="contact-modal__iframe"
+                    src="about:blank"
+                    data-src="https://docs.google.com/forms/d/e/1FAIpQLScs-hnlbi3GlSE5CyT3WrxFObLedPt-Ps1i59h5lpdbW1plhA/viewform?embedded=true"
+                    width="640" height="1208" frameborder="0" marginheight="0" marginwidth="0"
+                    title="Formulário de contato Edugital">
+                    Carregando…
+                </iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/main.js" defer></script>
+</body>
+
+</html>
